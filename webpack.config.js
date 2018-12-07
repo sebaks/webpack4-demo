@@ -4,8 +4,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+    mode: 'development',
     entry: {
         app: './src/index.js',
+        another: './src/another.js',
     },
     devtool: "inline-source-map",
     devServer: {
@@ -15,7 +17,13 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Output Management'
+            template: "./src/index.html",
+            chunks: ['app']
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/another.html",
+            filename: "another.html",
+            chunks: ['another']
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
