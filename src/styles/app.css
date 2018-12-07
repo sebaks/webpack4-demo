@@ -1,0 +1,10 @@
+.icon-chat {
+    background: url("./../images/live-chat.png");
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 27px;
+}
+h1 {
+    color: darkcyan;
+}

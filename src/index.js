@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import printMe from './print.js';
+import './styles/app.css';
 
 function component() {
     let element = document.createElement('div');
@@ -15,7 +16,7 @@ function component() {
     return element;
 }
 
-document.body.appendChild(component());
+document.getElementsByClassName('app')[0].appendChild(component());
 
 if (module.hot) {
     module.hot.accept('./print.js', function() {
