@@ -3,10 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <title>Webpack demo</title>
+    <style>
+      h1 {
+        color: red;
+      }
+      .icon-chat-critical {
+        background: url("<%=require('./images/live-chat.png')%>");
+        content: '';
+        display: inline-block;
+        width: 30px;
+        height: 27px;
+      }
+    </style>
   </head>
   <body>
     <h1>Webpack demo</h1>
     <a href="another.html">Another app</a>
+    <div class="icon-chat-critical"></div>
     <div class="icon-chat"></div>
     <div class="app"></div>
     <img src="<%=require('./images/cute-dog-dogs-picture.jpg')%>">
