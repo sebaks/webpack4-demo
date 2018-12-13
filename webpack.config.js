@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -19,13 +20,18 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: "./src/index.html",
-            chunks: ['app']
+            chunks: ['app'],
+            prefetch: false,
+            preload: ['app.css']
         }),
         new HtmlWebpackPlugin({
             template: "./src/another.html",
             filename: "another.html",
-            chunks: ['another']
+            chunks: ['another'],
+            prefetch: false,
+            preload: false
         }),
+        new ResourceHintWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
