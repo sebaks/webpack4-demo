@@ -22,7 +22,16 @@ module.exports = {
             template: "./src/index.html",
             chunks: ['app'],
             prefetch: false,
-            preload: ['app.css']
+            preload: ['app.css'],
+            minify: {
+                minifyCSS: true,
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            }
         }),
         new HtmlWebpackPlugin({
             template: "./src/another.html",
